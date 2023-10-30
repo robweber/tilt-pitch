@@ -9,6 +9,7 @@ class TiltStatus(JsonSerialize):
         self.timestamp = datetime.datetime.now()
         self.color = color
         self.name = config.get_brew_name(color)
+        self.brew_name = config.get_brew_name(color)
         self.temp_fahrenheit = temp_fahrenheit + config.get_temp_offset(color)
         self.temp_celsius = TiltStatus.get_celsius(temp_fahrenheit)
         self.original_gravity = config.get_original_gravity(color)
